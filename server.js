@@ -7,7 +7,6 @@ app.use(cors()); // allow requests from all frontend.
 
 require("dotenv").config();
 
-
 // Create a connection pool to the database
 const pool = mysql.createPool({
   host: process.env.MYSQL_HOST,
@@ -15,7 +14,7 @@ const pool = mysql.createPool({
   password: process.env.MYSQL_PASSWORD,
   database: process.env.MYSQL_DATABASE,
   port: process.env.MYSQL_PORT || 3306,
-  ssl: { ca: fs.readFileSync("./DigiCertGlobalRootCA.crt.pem") },
+  ssl: { ca: fs.readFileSync("./DigiCertGlobalRootG2.crt.pem") },
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
